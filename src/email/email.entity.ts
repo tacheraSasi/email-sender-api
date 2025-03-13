@@ -1,4 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 class Email {
@@ -13,4 +18,7 @@ class Email {
 
   @Column()
   body: string;
+
+  @CreateDateColumn()
+  sentAt: Date;
 }
