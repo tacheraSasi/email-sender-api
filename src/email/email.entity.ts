@@ -15,9 +15,12 @@ export class Email {
 
   @Column()
   subject: string;
+  
+  @Column()
+  to: string;
 
   @Column()
-  body: string;
+  message: string;
 
   @CreateDateColumn()
   sentAt: Date;
