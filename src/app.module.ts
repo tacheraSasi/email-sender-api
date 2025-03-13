@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { EmailModule } from './email/email.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Email } from './email/email.entity';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: process.env.DB_PASS || '',
       database: process.env.DB_NAME || 'emaildb',
       entities: [Email],
-      synchronize: true, // Auto creates tables (Not recommended in production)
+      synchronize: true,
     }),
     ,
     EmailModule,
