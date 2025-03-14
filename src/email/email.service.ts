@@ -26,7 +26,7 @@ export class EmailService {
 
       const email = this.emailRepository.create({ to, subject, message });
       await this.emailRepository.save(email);
-      
+
       console.log("Data",response.data)
       return { success: true, response: response.data };
     } catch (error) {
