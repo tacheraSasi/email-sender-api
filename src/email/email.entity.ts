@@ -11,9 +11,6 @@ export class Email {
   id: number;
 
   @Column()
-  email: string;
-
-  @Column()
   subject: string;
   
   @Column()
