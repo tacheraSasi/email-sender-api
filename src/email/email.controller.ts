@@ -1,10 +1,15 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { EmailService } from './email.service';
 
 @Controller('email')
 export class EmailController {
   constructor(private readonly emailService: EmailService) {}
-
+  
+  @Get()
+  async getHello(): Promise<string> {
+    return 'Hello World!';
+  }
+  
   @Post('send')
   async sendEmail(
     @Body('to') to: string,
