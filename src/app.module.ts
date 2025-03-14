@@ -8,7 +8,7 @@ import { Email } from './email/email.entity';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot(), 
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST || 'localhost',
@@ -19,7 +19,6 @@ import { Email } from './email/email.entity';
       entities: [Email],
       synchronize: true,
     }),
-    ,
     EmailModule,
   ],
   controllers: [AppController],
